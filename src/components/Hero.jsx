@@ -79,15 +79,6 @@ const Hero = () => {
             >
               View Projects
             </a>
-
-            <a
-              href="#contact"
-              className="rounded-full bg-neutral-800 px-6 py-3 text-sm 
-                         border border-neutral-600 text-neutral-100 
-                         hover:bg-neutral-700 transition"
-            >
-              Contact Me
-            </a>
           </motion.div>
         </div>
 
