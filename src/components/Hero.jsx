@@ -2,6 +2,7 @@
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/profile.png";
 import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
 
 const container = (delay) => ({
   hidden: { opacity: 0, y: 40 },
@@ -19,10 +20,8 @@ const Hero = () => {
       className="border-b border-neutral-900 pb-20 pt-10 lg:pb-32"
     >
       <div className="flex flex-wrap lg:flex-nowrap">
-        
         {/* LEFT SIDE */}
         <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
-
           {/* Name */}
           <motion.h1
             variants={container(0)}
@@ -33,7 +32,7 @@ const Hero = () => {
             Induja Kukatikonda
           </motion.h1>
 
-          {/* Title */}
+          {/* Title (Rotating) */}
           <motion.h3
             variants={container(0.2)}
             initial="hidden"
@@ -42,7 +41,15 @@ const Hero = () => {
                        bg-clip-text text-transparent text-2xl lg:text-3xl 
                        tracking-tight mb-6"
           >
-            Business Analyst
+            <Typewriter
+              words={["Business Analyst", "Data Analyst", "BI Analyst"]}
+              loop={0} // infinite
+              cursor
+              cursorStyle="|"
+              typeSpeed={60}
+              deleteSpeed={40}
+              delaySpeed={1400}
+            />
           </motion.h3>
 
           {/* Hero Content */}
