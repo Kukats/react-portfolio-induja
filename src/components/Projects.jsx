@@ -1,20 +1,25 @@
+// src/components/Projects.jsx
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 
 const Projects = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4">
+    <section
+      id="projects"
+      className="border-b border-neutral-900 pb-20 px-4"
+    >
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
+        initial={{ opacity: 0, y: -40 }}
         transition={{ duration: 0.5 }}
-        className="my-20 text-center text-4xl"
+        viewport={{ once: true }}
+        className="my-20 text-center text-4xl font-semibold text-neutral-100"
       >
         Projects
       </motion.h2>
 
-      <div>
+      <div className="mx-auto max-w-5xl">
         {PROJECTS.map((project, index) => (
           <div
             key={index}
@@ -23,8 +28,9 @@ const Projects = () => {
             {/* IMAGE */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: -100 }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, x: -60 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
               className="w-full lg:w-1/4"
             >
               <img
@@ -39,15 +45,16 @@ const Projects = () => {
             {/* TEXT + TAGS + BUTTONS */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
-              initial={{ opacity: 0, x: 100 }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, x: 60 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
               className="w-full max-w-xl lg:w-3/4"
             >
-              <h6 className="mb-2 text-xl font-semibold">
+              <h6 className="mb-2 text-xl font-semibold text-neutral-200">
                 {project.title}
               </h6>
 
-              <p className="mb-4 text-neutral-400">
+              <p className="mb-4 text-neutral-400 leading-relaxed">
                 {project.description}
               </p>
 
@@ -56,7 +63,9 @@ const Projects = () => {
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="mr-2 mb-2 rounded bg-neutral-900/60 px-3 py-1 text-sm font-medium text-neutral-300 border border-neutral-800"
+                    className="mr-2 mb-2 rounded bg-neutral-900/60 
+                               px-3 py-1 text-sm font-medium 
+                               text-neutral-300 border border-neutral-800"
                   >
                     {tech}
                   </span>
@@ -96,7 +105,7 @@ const Projects = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

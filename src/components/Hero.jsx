@@ -1,70 +1,110 @@
+// src/components/Hero.jsx
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/profile.png";
 import { motion } from "framer-motion";
 
 const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
-    x: 0,
     opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+    y: 0,
+    transition: { duration: 0.6, delay },
   },
 });
 
 const Hero = () => {
   return (
-    <div className="border-b border-neutral-900 pb-4 lg:mb-36">
-      <div className="flex flex-wrap">
-        <div className="w-full lg:w-1/2">
-          <div className="flex flex-col items-center lg:items-start">
-            <motion.h2
-              variants={container(0)}
-              initial="hidden"
-              animate="visible"
-              className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg:text-8xl"
+    <section
+      id="hero"
+      className="border-b border-neutral-900 pb-20 pt-10 lg:pb-32"
+    >
+      <div className="flex flex-wrap lg:flex-nowrap">
+        
+        {/* LEFT SIDE */}
+        <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start">
+
+          {/* Name */}
+          <motion.h1
+            variants={container(0)}
+            initial="hidden"
+            animate="visible"
+            className="text-6xl lg:text-8xl font-thin tracking-tight mb-6"
+          >
+            Induja Kukatikonda
+          </motion.h1>
+
+          {/* Title */}
+          <motion.h3
+            variants={container(0.2)}
+            initial="hidden"
+            animate="visible"
+            className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 
+                       bg-clip-text text-transparent text-2xl lg:text-3xl 
+                       tracking-tight mb-6"
+          >
+            Business Analyst
+          </motion.h3>
+
+          {/* Hero Content */}
+          <motion.p
+            variants={container(0.4)}
+            initial="hidden"
+            animate="visible"
+            className="max-w-2xl text-neutral-300 text-lg leading-relaxed font-light mb-10"
+          >
+            {HERO_CONTENT}
+          </motion.p>
+
+          {/* CTA BUTTONS */}
+          <motion.div
+            variants={container(0.6)}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-wrap gap-4 mt-2"
+          >
+            <a
+              href="#experience"
+              className="rounded-full bg-neutral-800 px-6 py-3 text-sm 
+                         border border-neutral-600 text-neutral-100 
+                         hover:bg-neutral-700 transition"
             >
-              Induja Kukatikonda
-            </motion.h2>
+              View Experience
+            </a>
 
-            <motion.span
-              variants={container(0.5)}
-              initial="hidden"
-              animate="visible"
-              className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
+            <a
+              href="#projects"
+              className="rounded-full bg-neutral-800 px-6 py-3 text-sm 
+                         border border-neutral-600 text-neutral-100 
+                         hover:bg-neutral-700 transition"
             >
-              Business Analyst
-            </motion.span>
+              View Projects
+            </a>
 
-            {/* Matches About section styling */}
-            <motion.p
-  variants={container(1)}
-  initial="hidden"
-  animate="visible"
-  className="my-4 max-w-2xl py-6 text-lg leading-relaxed text-neutral-300 font-light tracking-tight"
->
-  {HERO_CONTENT}
-</motion.p>
-
-          </div>
+            <a
+              href="#contact"
+              className="rounded-full bg-neutral-800 px-6 py-3 text-sm 
+                         border border-neutral-600 text-neutral-100 
+                         hover:bg-neutral-700 transition"
+            >
+              Contact Me
+            </a>
+          </motion.div>
         </div>
 
-        {/* IMAGE SECTION */}
-        <div className="w-full lg:w-1/2 lg:p-8">
-          <div className="flex justify-center">
+        {/* RIGHT SIDE (IMAGE) */}
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-10 lg:mt-0">
           <motion.img
-  initial={{ x: 100, opacity: 0 }}
-  animate={{ x: 0, opacity: 1 }}
-  transition={{ duration: 1, delay: 1.2 }}
-  src={profilePic}
-  alt="Induja Kukatikonda"
-  className="max-h-[520px] w-auto object-cover rounded-xl shadow-lg"
-/>
-          </div>
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.8 }}
+            src={profilePic}
+            alt="Induja Kukatikonda"
+            className="max-h-[520px] w-auto rounded-xl object-cover shadow-lg"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Hero;
-

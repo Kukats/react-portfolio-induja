@@ -8,21 +8,23 @@ const About = () => {
       id="about"
       className="border-b border-neutral-900 py-24 px-4"
     >
-      {/* Centered heading */}
+      {/* Heading with clearer motion */}
       <motion.h2
-        whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -40 }}
-        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="mb-12 text-center text-4xl font-semibold text-neutral-100"
       >
         About Me
       </motion.h2>
 
-      {/* Paragraph block */}
+      {/* Text block with fade + slide up */}
       <motion.div
-        whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: 40 }}
-        transition={{ duration: 0.6 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="mx-auto max-w-3xl text-base leading-snug text-neutral-300"
       >
         <p className="whitespace-pre-line">
