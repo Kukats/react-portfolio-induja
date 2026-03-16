@@ -1,6 +1,6 @@
 // src/components/Technologies.jsx
 import { SiTableau, SiMysql, SiPython, SiDatabricks } from "react-icons/si";
-import { FaFileExcel, FaGitAlt, FaChartBar, FaAws } from "react-icons/fa";
+import { FaFileExcel, FaGitAlt, FaChartBar, FaAws, FaServer, FaDatabase } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const cardBase =
@@ -68,6 +68,21 @@ const Technologies = () => {
         <motion.div className={cardBase} variants={cardVariants}>
           <FaAws className="text-4xl text-[#FF9900]" />
           <p className="mt-2 text-sm text-neutral-300">AWS</p>
+        </motion.div>
+
+        <motion.div className={cardBase} variants={cardVariants}>
+          <FaServer className="text-4xl text-[#2496ED]" />
+          <p className="mt-2 text-sm text-neutral-300">DevOps</p>
+        </motion.div>
+
+        <motion.div className={cardBase} variants={cardVariants}>
+          <FaDatabase className="text-4xl text-[#66CCFF]" />
+          <p className="mt-2 text-sm text-neutral-300">Hadoop</p>
+        </motion.div>
+
+        <motion.div className={cardBase} variants={cardVariants}>
+          <FaDatabase className="text-4xl text-[#F80000]" />
+          <p className="mt-2 text-sm text-neutral-300">Oracle</p>
         </motion.div>
 
         <motion.div className={cardBase} variants={cardVariants}>
