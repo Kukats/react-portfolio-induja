@@ -18,10 +18,7 @@ const Experience = () => {
 
       <div className="mx-auto max-w-5xl">
         {EXPERIENCES.map((experience, index) => (
-          <div
-            key={index}
-            className="mb-12 flex flex-wrap lg:justify-center"
-          >
+          <div key={index} className="mb-12 flex flex-wrap lg:justify-center">
             {/* Year */}
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
@@ -29,9 +26,7 @@ const Experience = () => {
               transition={{ duration: 0.6 }}
               className="w-full lg:w-1/4"
             >
-              <p className="mb-2 text-sm text-neutral-400">
-                {experience.year}
-              </p>
+              <p className="mb-2 text-sm text-neutral-400">{experience.year}</p>
             </motion.div>
 
             {/* Role + Description */}
@@ -48,9 +43,13 @@ const Experience = () => {
                 </span>
               </h6>
 
-              <p className="mb-4 text-neutral-400 leading-relaxed">
-                {experience.description}
-              </p>
+              <ul className="mb-4 list-disc list-outside ml-4 space-y-1">
+                {experience.description.map((point, i) => (
+                  <li key={i} className="text-neutral-400 leading-relaxed">
+                    {point}
+                  </li>
+                ))}
+              </ul>
 
               {/* Tech tags */}
               <div className="flex flex-wrap">

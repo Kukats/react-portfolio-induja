@@ -42,7 +42,7 @@ const Hero = () => {
                        tracking-tight mb-6"
           >
             <Typewriter
-              words={["Business Analyst", "Data Analyst", "BI Analyst"]}
+              words={["Supply Chain Analyst", "Business Analyst"]}
               loop={0} // infinite
               cursor
               cursorStyle="|"
